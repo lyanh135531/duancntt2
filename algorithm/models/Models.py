@@ -5,7 +5,7 @@ class Item:
 
 class Transaction_Weight:
     def __init__(self):
-        self.transID = 0
+        self.trans_id = 0
         self.items = []
 
 class Transaction_Weights_DB:
@@ -13,7 +13,7 @@ class Transaction_Weights_DB:
         self.trans_weights = []
 
 
-class TRset:
+class TopRankSet:
     def __init__(self):
         self.ws = 0.0
         self.list_fwis = []
@@ -30,13 +30,13 @@ class FWI:
         self.diffset = []
         self.nodes = []
 
-class NodeCode:
+class NodeTree:
     def __init__(self):
         self.pre_value = 0
         self.post_value = 0
         self.tw = 0
 
-class WnNode:
+class WNTree:
     def __init__(self):
         self.item = Item()
         self.tw = 0

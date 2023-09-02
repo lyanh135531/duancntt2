@@ -8,6 +8,22 @@ class TFWITGeneration(ITFGeneration):
         self.candidate_next = [] # Initial Cnext
 
     def candidate_generation(self, candidate_k, hash_two_of_trans, _, ttw) -> list:
+        """
+        Generates the next set of candidates based on the given candidate set.
+
+        Args:
+            candidate_k (list): The current candidate set.
+            hash_two_of_trans (dict): A dictionary containing hash values of transaction pairs.
+            _ (placeholder): Unused parameter.
+            ttw (float): Total transaction weight.
+
+        Returns:
+            list: The next set of candidates.
+
+        Note:
+            This method implements an algorithm to generate the next set of candidates by combining
+            the diffsets, calculating the weighted support (ws), and combining the items.
+        """
         for i in range(len(candidate_k) -1, 0, -1):
             candidate_i = candidate_k[i]
             for j in range(i -1, -1, -1):
