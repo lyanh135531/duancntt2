@@ -25,7 +25,8 @@ class Plotter:
         plt.title('Thời gian')
         plt.legend()
         # Save image
-        plt.savefig('time.png')
+        plt.savefig('../time.png')
+        plt.close()
 
         # Show chart
         #plt.show()
@@ -43,7 +44,7 @@ class Plotter:
         plt.title('Bộ nhớ')
         plt.legend()
         # Save image
-        plt.savefig('memory.png')
-
+        plt.savefig('../memory.png')
+        plt.close()
         # Show chart
         #plt.show()
