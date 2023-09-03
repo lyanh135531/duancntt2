@@ -307,23 +307,22 @@ if __name__ == "__main__":
     TFWINPLUS_memories_used = []
     for rank in ranks:
         tfwit = TFAlgorithmExecution(TFWITGeneration)
-        tfwit.execute("./data/trans.txt", "./data/weights.txt", "./data/TFWIT_output.txt", rank)
-        #tfwit.execute("./data/trans.txt", "./data/weights.txt", "./data/TFWIT_output.txt", i)
+        tfwit.execute("../data/trans.txt", "../data/weights.txt", "../data/TFWIT_output.txt", rank)
         TFWIT_time.append(tfwit.end_time - tfwit.start_time)
         TFWIT_memories_used.append(tfwit.memory_used)
 
         tfwid = TFAlgorithmExecution(TFWIDGeneration)
-        tfwid.execute("./data/trans.txt", "./data/weights.txt", "./data/TFWID_output.txt", rank)
+        tfwid.execute("../data/trans.txt", "../data/weights.txt", "../data/TFWID_output.txt", rank)
         TFWID_time.append(tfwid.end_time - tfwid.start_time)
         TFWID_memories_used.append(tfwid.memory_used)
 
         tfwin = TFAlgorithmExecution(TFWINGeneration)
-        tfwin.execute("./data/trans.txt", "./data/weights.txt", "./data/TFWIN_output.txt", rank)
+        tfwin.execute("../data/trans.txt", "../data/weights.txt", "../data/TFWIN_output.txt", rank)
         TFWIN_time.append(tfwin.end_time - tfwin.start_time)
         TFWIN_memories_used.append(tfwin.memory_used)
 
         tfwinplus = TFAlgorithmExecution(TFWINPLUSGeneration)
-        tfwinplus.execute("./data/trans.txt", "./data/weights.txt", "./data/TFWINPLUS_output.txt", rank)
+        tfwinplus.execute("../data/trans.txt", "../data/weights.txt", "../data/TFWINPLUS_output.txt", rank)
         TFWINPLUS_time.append(tfwinplus.end_time - tfwinplus.start_time)
         TFWINPLUS_memories_used.append(tfwinplus.memory_used)
         
@@ -331,7 +330,7 @@ if __name__ == "__main__":
     plotter = Plotter(ranks, TFWID_time, TFWIT_time, TFWIN_time, TFWINPLUS_time, TFWID_memories_used, TFWIT_memories_used, TFWIN_memories_used, TFWINPLUS_memories_used)
 
     # Vẽ biểu đồ thời gian và lưu vào file ảnh
-    #plotter.draw_time_plot()
+    plotter.draw_time_plot()
 
     # Vẽ biểu đồ bộ nhớ và lưu vào file ảnh
     plotter.draw_memory_plot()
